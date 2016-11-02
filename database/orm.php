@@ -50,6 +50,18 @@ class DB{
           }
         return $data;
     }
+
+    public function calculateEmplPerYear($countColumn,$groupColumn){
+
+        $findString = "SELECT count(".$countColumn.") as Total," . $groupColumn ." as Year FROM `$this->table` GROUP BY ".$groupColumn;
+        $result = $this->dbConnection->send_sql($findString);
+        $data = [];
+        while($row = mysqli_fetch_object($result))
+        {
+            array_push($data,(array) $row);
+        }
+        return $data;
+    }
     public function delete($column,$value)
     {
         $findString = "DELETE FROM `$this->table` WHERE `$column` = '$value';";
@@ -72,9 +84,11 @@ class DB{
         $updateString.=" WHERE `$column` = '$values';";
         return $this->dbConnection->send_sql($updateString);
     }
+
     public function execSQL($data)
     {
         return $this->dbConnection->send_sql($data);   
     }
+
 }
 ?>

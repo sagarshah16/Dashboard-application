@@ -12,8 +12,8 @@
             chart: {
                 type: 'pieChart',
                 height: 500,
-                x: function(d){return d.Hire_Date;},
-                y: function(d){return d.Id;},
+                x: function(d){return d.Year;},
+                y: function(d){return d.Total;},
                 showLabels: true,
                 duration: 500,
                 labelThreshold: 0.01,

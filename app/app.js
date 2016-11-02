@@ -63,7 +63,7 @@
                                 resolve: {
                                     employeeResource : "employeeResource",
                                     employees: function(employeeResource){
-                                         return employeeResource.listUsers();
+                                         return employeeResource.getCount();
                                         // function(response) {
                                         //         // no code needed for success
                                         //     },

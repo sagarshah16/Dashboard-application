@@ -29,7 +29,10 @@
             },
 
             listUsers: function () {
-                 return $http.get('api/listUsers.php');
+                return $http.get('api/listUsers.php');
+            },
+            getCount: function () {
+                return $http.get('api/getCount.php');
             },
         };
 
