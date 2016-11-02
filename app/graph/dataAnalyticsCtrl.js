@@ -6,7 +6,6 @@
 
     function DataAnalyticsController($scope, employees)
     {
-
         $scope.title="Data Analytics";
         $scope.options = {
             chart: {
@@ -30,8 +29,6 @@
         };
 
         $scope.data = employees.data;
-
-        console.log(employees.data);
 
     }
 }());
