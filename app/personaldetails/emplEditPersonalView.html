@@ -1,0 +1,97 @@
+<form name="emplForm" class="form-horizontal">
+    <fieldset>
+        <legend>Persoanl Information</legend>
+        <div class="form-group" ng-class="{'has-error':emplForm.inputEmplFirstName.$invalid &&
+                                                       emplForm.inputEmplFirstName.$dirty}" >
+            <label for="inputEmplFirstName" class="col-md-2 control-label">First Name</label>
+            <div class="col-md-4">
+            <input id="inputEmplFirstName" name="inputEmplFirstName"
+                   type="text" placeholder="Employee First Name (required)"
+                   ng-model="vm.employee.First_Name" class="form-control" required data-ng-pattern="/^[a-zA-Z\ \.\-\']*$/" ng-minlength="3"/>
+            </div>
+                <span style="color:red" data-ng-show="emplForm.inputEmplFirstName.$dirty && emplForm.inputEmplFirstName.$invalid">
+                <span data-ng-show="emplForm.inputEmplFirstName.$error.required">First Name  is required.</span>
+                <span data-ng-show="emplForm.inputEmplFirstName.$error.pattern">First Name  is not Valid.</span>
+                <span ng-show="emplForm.inputEmplFirstName.$error.minlength">Employee first name must me more than 3 characters </span>
+                </span>
+
+        </div>
+
+        <div class="form-group" ng-class="{'has-error':emplForm.inputEmplLastName.$invalid &&
+                                                       emplForm.inputEmplLastName.$dirty}" >
+        <label for="inputEmplName" class="col-md-2 control-label">Last Name</label>
+        <div class="col-md-4">
+            <input id="inputEmplLastName" name="inputEmplLastName"
+                   type="text" placeholder="Employee Last Name (required)"
+                   ng-model="vm.employee.Last_Name" class="form-control" required data-ng-pattern="/^[a-zA-Z\ \.\-\']*$/" ng-minlength="3"/>
+        </div>
+            <span style="color:red" data-ng-show="emplForm.inputEmplLastName.$dirty && emplForm.inputEmplLastName.$invalid">
+                <span data-ng-show="emplForm.inputEmplLastName.$error.required">Last Name  is required.</span>
+                <span data-ng-show="emplForm.inputEmplLastName.$error.pattern">Last Name  is not Valid.</span>
+                <span ng-show="emplForm.inputEmplLastName.$error.minlength">Employee first last must me more than 3 characters </span>
+                </span>
+
+    </div>
+
+        <div class="form-group" ng-class="{'has-error':emplForm.inputEmplEmail.$invalid &&
+                                                       emplForm.inputEmplEmail.$dirty}" >
+            <label for="inputEmplEmail" class="col-md-2 control-label">Email</label>
+            <div class="col-md-4">
+                <input id="inputEmplEmail" name="inputEmplEmail"
+                       type="email" placeholder="Employee Email (required)"
+                       ng-model="vm.employee.Email" class="form-control" required/>
+            </div>
+            <span style="color:red" data-ng-show="emplForm.inputEmplEmail.$dirty && emplForm.inputEmplEmail.$invalid">
+                <span ng-show="emplForm.inputEmplEmail.$error.required">Employee Email Id required </span>
+                <span ng-if="emplForm.inputEmplEmail.$error.email"> Not valid email!</span>
+            </span>
+
+        </div>
+
+        <!--<div class="col-md-4 required" data-ng-class="{'has-error':myForm.birthDate.$invalid && myForm.birthDate.$dirty}">-->
+            <!--<label for="birthDate">Date Of Birth</label>-->
+            <!--<p class="input-group doa-datepicker">-->
+                <!--<input type="text" class="form-control"  name="birthDate" datepicker-append-to-body="true" placeholder="Date of Birth" popup-placement="right-bottom" uib-datepicker-popup="MM/dd/yyyy" data-ng-model="formData.birthDate" is-open="popup1.opened" datepicker-options="dobDateOptions" data-ng-required="true" close-text="Close"  />-->
+                <!--<span class="input-group-btn">-->
+            <!--<button type="button" class="btn btn-default" data-ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>-->
+          <!--</span>-->
+            <!--</p>-->
+        <div class="form-group">
+            <label for="inputJoinDate" class="col-md-2 control-label">Joining Date</label>
+            <div class="col-md-4">
+                <div class="input-group">
+                <input  id="inputJoinDate" datepicker-popup="MM/dd/yyyy"
+                       type="text" class="form-control" datepicker-append-to-body="true" popup-placement="right-bottom" uib-datepicker-popup="yyyy/MM/dd"
+                        is-open="vm.opened" datepicker-options="vm.dateOptions" data-ng-required="true" close-text="Close"
+                       ng-model="vm.employee.Hire_Date"
+                        />
+
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="vm.open()">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                    </button>
+                </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <span>
+                    <button class="btn btn-primary"
+                            style="width:80px;margin-right: 10px"
+                            ng-disabled="emplForm.$invalid"
+                            ng-click="vm.submit(vm.employee)">Save
+                    </button>
+                </span>
+                <span>
+                    <button class="btn btn-default"
+                            style="width:70px"
+                            ng-click="vm.cancel()">Cancel
+                    </button>
+                </span>
+
+            </div>
+        </div>
+
+    </fieldset>
+</form>

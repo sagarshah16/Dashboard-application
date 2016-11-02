@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size:large">
+        Employee List
+    </div >
+    <div class="panel-body">
+        <!--<table class="table">-->
+            <!--<thead>-->
+            <!--<tr>-->
+                <!--<td>Code</td>-->
+                <!--<td>Name</td>-->
+                <!--<td>Joining Date</td>-->
+                <!--<td> Action </td>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+            <!--<tr ng-repeat="empl in vm.employees">-->
+                <!--<td><a ui-sref="emplDetail({emplId: empl.Id})"> {{$index + 1}}</a> </td>-->
+                <!--<td>{{empl.First_Name}} {{empl.Last_Name}}</td>-->
+                <!--<td>{{empl.Hire_Date | date :  "yyyy-MM-dd" }}</td>-->
+                <!--<td><a class="btn btn-primary"-->
+                       <!--ui-sref="emplEdit.personal({emplId: empl.Id})"> Edit-->
+                    <!--</a>-->
+                    <!--<button ng-click="vm.delete(empl.Id, $index)" type="button" class="btn btn-danger">Delete</button>-->
+                <!--</td>-->
+            <!--</tr>-->
+
+            <!--</tbody>-->
+        <!--</table>-->
+
+<div id="grid1" ui-grid="vm.gridOptions" class="grid" ></div>
+</div>
+
+</div>
